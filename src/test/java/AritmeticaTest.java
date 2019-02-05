@@ -22,4 +22,14 @@ public class AritmeticaTest {
     public void testDivision() {
         //fail("Not yet implemented");
     }
+    @Test(expected = ArithmeticException.class)
+    public void divisionPorCero(){
+       // try {
+            System.out.println(1 / 0);
+         //   fail("Aqui no debe llegar");
+        //} catch (ArithmeticException e){
+
+        //}
+
+    }
 }
