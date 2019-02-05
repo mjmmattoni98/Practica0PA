@@ -1,27 +1,47 @@
 import aritmetica.Aritmetica;
 import org.junit.Test;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.*;
 
 public class AritmeticaTest {
+    private static Aritmetica aritmetica;
+
+    @BeforeClass
+    public static void init() {
+        aritmetica = new Aritmetica();
+    }
+
+    @AfterClass
+    public static void finish() {
+        aritmetica = null;
+    }
+
     @Test
     public void testSuma() {
-        //fail("Not yet implemented");
-        Aritmetica aritmetica = new Aritmetica();
-        assertEquals(2, aritmetica.suma(1,1), 0);
+        assertThat(aritmetica, notNullValue());
+        assertThat(aritmetica.suma(2, 3), is(5.0));
     }
+
     @Test
     public void testResta() {
-        //fail("Not yet implemented");
+        assertEquals(3, aritmetica.resta(4, 1), 0);
     }
+
     @Test
     public void testMultiplicacion() {
-        //fail("Not yet implemented");
+        assertEquals(6, aritmetica.multiplicacion(2, 3), 0);
     }
+
     @Test
     public void testDivision() {
-        //fail("Not yet implemented");
+        assertEquals(5, aritmetica.division(10, 2), 0);
     }
+
     @Test(/*expected = ArithmeticException.class*/)
     public void divisionPorCero(){
        try {
