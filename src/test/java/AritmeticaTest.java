@@ -3,8 +3,6 @@ import org.junit.Test;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
-import java.util.ArrayList;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
